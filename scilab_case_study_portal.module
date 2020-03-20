@@ -1,0 +1,36 @@
+<?php
+// $Id$
+require_once('email.inc');
+/*
+ * Implementation of hook_menu().
+ */
+function scilab_case_study_portal_menu()
+{
+    $items = array();
+    /* users */
+    $items['case-study-portal/proposal'] = array(
+        'title' => 'Case Study Proposal Form',
+        'description' => 'Case Study Proposal Form.',
+        'page callback' => 'scilab_case_study_proposal_all',
+        'access callback' => 'user_access',
+        'access arguments' => array(
+            'submit case study proposal'
+        ),
+        'type' => MENU_CALLBACK,
+        'file' => 'proposal.inc'
+    );
+    return $items;
+}
+/**
+ * Implementation of hook_permission().
+ */
+function scilab_case_study_portal_permission()
+{
+    return array(
+        "submit case study proposal" => array(
+            "title" => t("Case Study Proposal Form"),
+            "description" => t("Case Study Proposal Form.")
+        ),
+    );
+}
+

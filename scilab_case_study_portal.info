@@ -1,0 +1,6 @@
+name = Scilab Case Study Project Portal
+description = FOSSEE, IIT Bombay, Scilab Case Study Project
+package = IITB
+version = VERSION
+core = 7.x
+project = "scilab_case_sudy_portal"
